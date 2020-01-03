@@ -1,0 +1,15 @@
+{
+    "name": "friday/design-patterns",
+    "authors": [
+        {
+            "name": "Friday",
+            "email": "faradayyg@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+    	"psr-4": {
+    		"Observer\\": "observer/"
+    	}
+    }
+}
