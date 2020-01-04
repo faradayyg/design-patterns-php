@@ -1,5 +1,5 @@
 <?php
-namespace Observer;
+namespace App\Observer;
 
 
 /**

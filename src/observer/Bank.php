@@ -2,14 +2,26 @@
 /**
  * The Bank Class that implements the Observable interface
  */
- namespace Observer;
+ namespace App\Observer;
 
- use Observer\ObservableInterface;
- use Observer\ObserverInterface;
+ use App\Observer\ObservableInterface;
+ use App\Observer\ObserverInterface;
 
 /**
- * Bank Class
- * This is a singleton class.
+ * The Bank class
+ * This is a singleton class
+ * 
+ * @category Class
+ * 
+ * @package Observer\Cashier
+ * 
+ * @author Friday G <faradayyg@gmail.com>
+ * 
+ * @license MIT https://opensource.org/licenses/MIT
+ * 
+ * @version Release: 1.0
+ * 
+ * @link I dunno what you should be
  */
 class Bank implements ObservableInterface
 {
@@ -78,6 +90,25 @@ class Bank implements ObservableInterface
     {
         foreach (static::$observers as $observer) {
             $observer->update($data);
+        }
+    }
+
+    /**
+     * This returns a list of all the registered observers
+     * 
+     * @return void
+     */
+    public function listAllRegisteredObservers()
+    {
+        echo "============= \n All Registered observers \n=========== \n";
+        foreach (static::$observers as $observer) {
+            try {
+                echo "Class Signature => ". $observer::$signature . "\n";
+            } catch (\Exception $e) {
+                echo "Class signature not found.";
+            }
+
+            var_dump($observer);
         }
     }
 }

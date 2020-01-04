@@ -1,7 +1,7 @@
 <?php
-namespace Observer;
+namespace App\Observer;
 
-use Observer\ObserverInterface as OB;
+use App\Observer\ObserverInterface as OB;
 
 interface ObservableInterface
 {
